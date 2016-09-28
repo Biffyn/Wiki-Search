@@ -1,0 +1,27 @@
+$wikiBlue: #165c91;
+
+body {
+    background: #457fca;
+    background: -webkit-linear-gradient(to left, #457fca , #5691c8);
+    background: linear-gradient(to left, #457fca , #5691c8);
+}
+
+#searchWrap {
+    width: 80%;
+}
+
+#random {
+    font-size: 1.5em;
+}
+
+.main {
+    padding-top: 50px;
+}
+
+.rdm-btn {
+    margin: 20px auto;
+}
+
+.wiki-blue {
+    color: $wikiBlue;
+}
