@@ -5,12 +5,12 @@ $(document).ready(function() {
     function search() {
         $("#searchIcon").on("click", function() {
                 searchQuery = encodeURIComponent($("#search").val());
-                console.log(searchQuery);
+                // console.log(searchQuery);
                 $.ajax({
                         type: "GET",
                         url: url,
                         async: false,
-                        dataType: "json",
+                        dataType: "jsonp",
                         data: {
                             "action": "opensearch",
                             "format": "json",
@@ -19,6 +19,13 @@ $(document).ready(function() {
                         },
                         success: function(data) {
                             console.log(data);
+                            console.log(data[1][0]);
+                            console.log(data[1][1]);
+                            console.log(data[2][0]);
+                            console.log(data[2][1]);
+                            console.log(data[3][0]);
+                            console.log(data[3][1]);
+
                         },
                         error: function(err) {
                             console.log(err);
