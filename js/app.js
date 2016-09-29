@@ -2,11 +2,10 @@ $(document).ready(function() {
     var searchQuery = $("#search").val();
     var url = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + searchQuery + "&callback=?";
 
-
     function search() {
-        $("#searchIcon").on("click", function() {
-            searchQuery = encodeURIComponent($("#search").val());
-            // console.log(searchQuery);
+        $("#search").click(function() {
+            searchQuery = encodeURIComponent($("#input").val());
+            // make ajax call to api
             $.ajax({
                 type: "GET",
                 url: url,
@@ -18,24 +17,24 @@ $(document).ready(function() {
                     "limit": 10,
                     "search": searchQuery
                 },
-                success: function(data) {
+                success: function(res) {
                     // clear the output
-                    $("#output").html("");
-                    // loop through array
-                    for (var i = 0; i < data[1].length; i++) {
-                        $("#output").prepend('<div class="ui one column grid">\
-                                                <div class="column">\
-                                                    <div class="ui fluid card">\
-                                                        <div class="content">\
-                                                            <h1 id="title" class="header">' + data[1][i] + '</h1>\
-                                                            <div id="extract" class="description">' + data[2][i] + '</div>\
-                                                        </div>\
-                                                        <div class="extra content">\
-                                                            <a id="link" class="header" href="'+ data[3][i] + '" target="_blank">Read More</a>\
-                                                            </div>\
-                                                        </div>\
-                                                    </div>\
-                                                </div>');
+                    $("#output").empty();
+                    // loop through response and prepend to frontend
+                    for (var i = 0; i < res[1].length; i++) {
+                        $("#output").prepend(`<div class="ui one column grid">
+                                                <div class="column">
+                                                    <div id="card" class="ui fluid centered card">
+                                                        <div class="content">
+                                                            <div id="title" class="header">` + res[1][i] + `</div>
+                                                            <div id="extract" class="description"><p>` + res[2][i] + `</p></div>
+                                                        </div>
+                                                        <div class="extra content">
+                                                            <a id="link" class="ui inverted pink button" href="` + res[3][i] + `" target="_blank" rel="noopener noreferrer">Read More</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>`);
                     }
                 },
                 error: function(err) {
@@ -44,6 +43,13 @@ $(document).ready(function() {
             });
 
         }); // end search.on()click
+
+        //Trigger search click event when enter is pressed
+        $('#input').keypress(function(e) {
+            if (e.which == 13) {
+                $('#search').click();
+            }
+        });
     } // end search()
     search();
 }); //end doc.ready
