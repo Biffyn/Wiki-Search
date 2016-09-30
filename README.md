@@ -1,5 +1,5 @@
 # Wikipedia-Search
-#### *Wanna ~~procrastinate~~ ... do some research, or just learn about something random? Then this app has you covered 
+#### *Wanna ~~procrastinate~~ ... do some research, or just learn about something random? Then this app has you covered*
 
 ##
 
