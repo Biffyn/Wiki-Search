@@ -3,7 +3,7 @@
 
 ##
 
-##### :tv: For Live Preview [Click Here](https://biffyn.github.io/Wikipedia-Search/) :tv:
+##### :tv: For Live Preview [Click Here](https://biffyn.github.io/Wiki-Search/) :tv:
 
 ### Feature list:
 
