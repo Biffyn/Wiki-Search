@@ -12,22 +12,33 @@ p {
     font-size: 1.3em;
 }
 
-#search{
+img {
+    width: 300px;
+    height: 300px;
+}
+
+#heading{
+    font-size: 5em;
+    margin-bottom: 0.8em;
+}
+
+#search {
     font-size: 1.7em;
     margin: auto 20px;
 }
 
 #title {
-    font-size: 1.5em;
+    font-size: 1.7em;
 }
 
 #searchWrap {
+    margin-top: 2.5em;
     width: 80%;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 #random {
     font-size: 1.5em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 #card {
@@ -35,9 +46,52 @@ p {
 }
 
 .main {
-    padding-top: 100px;
+    padding-top: 7em;
 }
 
 .rdm-btn {
-    margin: 20px auto;
+    margin: 30px auto;
+}
+.white {
+    color: white;
+}
+.highlight{
+    color: rgb(224, 57, 151);
+}
+@media screen and (max-width:767px) {
+    p {
+        font-size: 1.05em;
+    }
+
+    img {
+        width: 160px;
+        height: 160px;
+    }
+
+    #heading{
+        font-size: 2.9em;
+    }
+
+    #searchWrap {
+        margin-top: 2.5em;
+        width: auto;
+    }
+
+    #search {
+        font-size: 1.2em;
+        margin: auto 10px;
+    }
+
+    #title {
+        font-size: 1.5em;
+    }
+
+    .main {
+        padding-top: 2.5em;
+    }
+
+    .rdm-btn {
+        font-size: 0.8em;
+        margin: 1.5em auto;
+    }
 }

@@ -18,6 +18,11 @@ $(document).ready(function() {
                     "search": searchQuery
                 },
                 success: function(res) {
+                    res[1].reverse();
+                    res[2].reverse();
+                    res[3].reverse();
+                    // hide the img 
+                    $("#img").hide();
                     // clear the output
                     $("#output").empty();
                     // loop through response and prepend to frontend
